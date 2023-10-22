@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace Lab6OOPInheritance
 {
-    internal class AustralianShepherd : Dog
+    internal class AustralianShepherd : Dog //Subclass inheriting from subclass Dog
     {
         public int Active { get; set; }
 
-        public AustralianShepherd(int active)
+        public AustralianShepherd() //Constructor, assigning default value to variable
         {
-            Active = active;
+            Active = 60; 
         }
 
-        public string Agility (int active)
+        public void Agility() //Specific method for this subclass
         {
-            if (Active < 50) return "The Australian Shepherd is bad at agility.";
-            else return "The Australian Shepherd is good at agility.";
+            if (Active < 50) //If-loop to write out different text dependending on bool result
+            {
+                Console.WriteLine("The australian shepherd is bad at agility...");
+            }
+            else
+            {
+                Console.WriteLine("The australian shepherd is good at agility!");
+            }
         }
     }
 }

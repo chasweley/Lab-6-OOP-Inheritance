@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace Lab6OOPInheritance
 {
-    internal class Dachshund : Dog
+    internal class Dachshund : Dog //Subclass inheriting from subclass Dog
     {
-        public int Dig { get; set; }
-        public Dachshund(int dig) 
+        public int Dig { get; set; } //New property for this subclass
+        public Dachshund() //Constructor, assigning default value to variable
         {
-            Dig = dig;
+            Dig = 20;
         }
 
-        public string Digging (int dig)
+        public void IsDiggingWell() //Specific method for this subclass
         {
-            if (dig < 50) return "This Dachshund can't dig very well.";
-            else return "This dachshund is digging so well!";
+            if (Dig < 50) //If-loop to write out different text dependending on bool result
+            {
+                Console.WriteLine("This dachshund can't dig very well...");
+            }
+            else
+            {
+                Console.WriteLine("This dachshund is digging so well!");
+            }
         }
     }
 }

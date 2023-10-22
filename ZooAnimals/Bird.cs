@@ -6,13 +6,26 @@ using System.Threading.Tasks;
 
 namespace Lab6OOPInheritance
 {
-    internal class Bird : Animal 
-
-        //Something with color
+    internal class Bird : Animal //Subclass inheriting from class Animal
     {
-        public override void makeSound()
+        public bool CanFly { get; set; }
+
+        //Constructor, assigning default value to variables
+        public Bird() : base("black", "bird", "Pip pip", 11, "Insects") 
         {
-            Console.WriteLine("Pip pip pip!");
+            CanFly = false;
+        }
+        
+        public void CanBirdFly() //Specific method for this subclass
+        {
+            if (CanFly) //If-loop to write out different text dependending on bool result
+            {
+                Console.WriteLine("The bird can fly!");
+            }
+            else
+            {
+                Console.WriteLine("This is a flightless bird, thus it cannot fly.");
+            }
         }
     }
 }

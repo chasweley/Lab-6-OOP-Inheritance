@@ -8,32 +8,35 @@ namespace Lab6OOPInheritance
 {
     internal class Animal
     {
-        public string Color { get; set; }
-        public int Paws { get; set; }
+        public string Color { get; set; } //Setting properties
+        public string Species { get; set; }
         public string Sound { get; set; }
-        public string SleepTime { get; set; }
-        public string Eat { get; set; }
+        public int HoursOfSleep { get; set; }
+        public string Food { get; set; }
 
-        public Animal(string color, int paws, string sound, string sleepTime, string eat) 
+        //Constructor for required variables
+        public Animal(string color, string species, string sound, int hoursOfSleep, string food) 
         {
             Color = color;
-            Paws = paws;
+            Species = species;
             Sound = sound;
-            SleepTime = sleepTime;
-            Eat = eat;
+            HoursOfSleep = hoursOfSleep;
+            Food = food;
         }
 
-        public virtual void Sleeping ()
+        //Base class methods all animals to inherit by subclasses
+        public void Sleeping ()
         {
-            Console.WriteLine("The animal needs sleep to survive!");
+            Console.WriteLine($"Zzzzz.... The {Color} {Species} needs about {HoursOfSleep} hours of sleep every day!");
         }
 
-        public virtual void Eating () {
-            Console.WriteLine("The animal needs food to survive!");
+        public void LikeToEat () {
+            Console.WriteLine($"{Food} is what the {Color} {Species} likes to eat. Omnomnomnom!");
         }
 
-        public virtual void makeSound () {
-            Console.WriteLine("The animal is making a sound!");
+        public void makeSound () 
+        {
+            Console.WriteLine($"{Sound}!");
         }
 
     }
